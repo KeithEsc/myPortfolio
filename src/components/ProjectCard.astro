@@ -1,0 +1,30 @@
+---
+interface Props {
+  image: string;
+  title: string;
+  body: string;
+}
+
+const { image, title, body } = Astro.props;
+---
+
+<div class="flex gap-4 flex-col md:flex-row hover:bg-[#111111] p-4 rounded-lg">
+  <img
+    src={image}
+    alt={title}
+    class="w-[200px] h-[120px] border-[.15rem] border-[#899AB3] md:order-1"
+  />
+  <div class="flex flex-col gap-2 order-1 md:order-2">
+    <h2
+      class="text-xl font-bold text-gray-300 hover:text-gray-50 group flex items-center"
+    >
+      {title}
+      <span
+        class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+      >
+        &nearr;
+      </span>
+    </h2>
+    <p class="text-[#899AB3] leading-6 text-lg">{body}</p>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
+import CreationImg from "../assets/images/CreationImg.png";
+import { Icon } from "astro-icon/components";
+import ProjectCard from "../components/ProjectCard.astro";
+import myportProject from "../assets/images/myportProject.png";
+import Hero from "../components/Hero.astro";
+import Technologies from "../components/Technologies.astro";
+import ytExtension from "../assets/images/ytExtension.png";
+import bandSwitcher from "../assets/images/bandSwitcher.png";
+import addressViewer from "../assets/images/addressViewer.png";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <Hero />
+    <h1 class="text-2xl mb-8 text-center lg:text-left mt-20">
+      Technologies I Use
+    </h1>
+    <Technologies />
+
+    <!-- Start of Projects -->
+    <div class="mt-20 w-full">
+      <h1 class="text-2xl mb-8 text-center lg:text-left mt-20">
+        Projects I've Worked On
+      </h1>
+      <div class="flex flex-col gap-8 mb-8">
+        <ProjectCard
+          image={myportProject.src}
+          title="keithesc.com (v1)"
+          body="A portfolio website for myself. This is the first version of my portfolio website. It was built with Astro, Tailwind, and TypeScript. It is hosted on Vercel."
+        />
+      </div>
+      <div class="flex flex-col gap-8 mb-8">
+        <ProjectCard
+          image={ytExtension.src}
+          title="YouTube Curator Chrome Extension"
+          body="Chrome extension that allows you to curate YouTube videos by selecting 'Not interested' or 'Don't recommend' when scrolling over the views line of the video preview."
+        />
+      </div>
+      <div class="flex flex-col gap-8 mb-8">
+        <ProjectCard
+          image={bandSwitcher.src}
+          title="WiFi Band Switcher"
+          body="GUI application that allows you to switch between WiFi bands on Windows. It is built with Python and changes the registry to switch the WiFi band."
+        />
+      </div>
+      <div class="flex flex-col gap-8 mb-8">
+        <ProjectCard
+          image={addressViewer.src}
+          title="Address Viewer"
+          body="React application that allows you to view a photo of an address. It uses Playwright to pull the images. Working on backend to allow for features like saving notes and ratings."
+        />
+      </div>
+    </div>
+    <!-- End of Projects -->
+  </main>
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .astro-a {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 220px;
+      height: auto;
+      z-index: -1;
+    }
+    h1 {
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+    .instructions {
+      margin-bottom: 2rem;
+      border: 1px solid rgba(var(--accent-light), 25%);
+      background: linear-gradient(
+        rgba(var(--accent-dark), 66%),
+        rgba(var(--accent-dark), 33%)
+      );
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .instructions code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background: rgba(var(--accent-light), 12%);
+      color: rgb(var(--accent-light));
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+    .instructions strong {
+      color: rgb(var(--accent-light));
+    }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+  </style>
+</Layout>
