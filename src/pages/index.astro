@@ -16,6 +16,7 @@ import addressViewer from "../assets/images/addressViewer.png";
 import { getPosts } from "../lib/wordpress";
 import type { Post } from "../lib/wordpress";
 import { truncateText } from "../lib/wordpress";
+import { request, gql } from 'graphql-request';
 const posts = await getPosts();
 ---
 
