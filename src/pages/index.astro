@@ -11,11 +11,50 @@ import Technologies from "../components/Technologies.astro";
 import ytExtension from "../assets/images/ytExtension.png";
 import bandSwitcher from "../assets/images/bandSwitcher.png";
 import addressViewer from "../assets/images/addressViewer.png";
+
+// src/pages/index.astro
+import { getPosts } from "../lib/wordpress";
+import type { Post } from "../lib/wordpress";
+import { truncateText } from "../lib/wordpress";
+const posts = await getPosts();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Keith Esclavon">
   <main>
     <Hero />
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-2xl mb-8 text-center lg:text-left mt-16">
+        Latest Posts
+      </h1>
+      <div class="space-y-6 sm:space-y-8">
+        {
+          posts.map((post: Post) => (
+            <article class=" p-4 sm:p-6 border-[.15rem] border-[#899AB3]">
+              <h2 class="text-xl font-semibold  mb-2">
+                {post.title}
+              </h2>
+              <p class="text-sm text-gray-500 mb-4">
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </p>
+              <div
+                class="prose prose-sm mb-4 text-gray-300 text-lg"
+                set:html={truncateText(post.excerpt, 150)}
+              />
+              <a
+                href={`/posts/${post.slug}`}
+                class="text-base inline-block text-blue-800 hover:text-blue-500 hover:underline "
+              >
+                Read more
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
     <h1 class="text-2xl mb-8 text-center lg:text-left mt-20">
       Technologies I Use
     </h1>
