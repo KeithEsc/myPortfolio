@@ -16,15 +16,16 @@ const { image, title, body } = Astro.props;
   />
   <div class="flex flex-col gap-2 order-1 md:order-2">
     <h2
-      class="text-xl font-bold text-gray-300 hover:text-gray-50 group flex items-center"
+      class="text-lg font-bold text-gray-300 hover:text-gray-50 group flex items-center"
     >
       {title}
-      <span
-        class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-      >
-        &nearr;
-      </span>
+      <span 
+      class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 color:red-500"
+      style="background: none !important;"
+    >
+      &nearr;
+    </span>
     </h2>
-    <p class="text-[#899AB3] leading-6 text-lg">{body}</p>
+    <p class="text-[#899AB3] leading-6 text-base">{body}</p>
   </div>
 </div>

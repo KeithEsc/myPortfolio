@@ -1,0 +1,40 @@
+---
+import { getPosts } from "../lib/wordpress";
+import type { Post } from "../lib/wordpress";
+import { truncateText } from "../lib/wordpress";
+const posts = await getPosts();
+---
+
+<div class="max-w-full mx-auto">
+    <h1 class="text-xl mb-6 text-center lg:text-left mt-10">
+      Latest Posts
+    </h1>
+    <div class="space-y-6 sm:space-y-8">
+      {
+        posts.map((post: Post) => (
+          <article class="">
+            <h2 class="text-lg font-semibold mb-2">
+              {post.title}
+            </h2>
+            <p class="text-sm text-gray-500 mb-2">
+              {new Date(post.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+            <div
+              class="prose prose-sm mb-2 text-gray-300 text-base"
+              set:html={truncateText(post.excerpt, 150)}
+            />
+            <a
+              href={`/posts/${post.slug}`}
+              class="text-base inline-block text-blue-800 hover:text-blue-500 hover:underline "
+            >
+              Read more
+            </a>
+          </article>
+        ))
+      }
+    </div>
+</div>
