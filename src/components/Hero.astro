@@ -1,19 +1,19 @@
 ---
 import CreationImg from "../assets/images/CreationImg.png";
 import { Icon } from "astro-icon/components";
-import profilePic from "../assets/images/profilePic.png";
+import JCProfile from "../assets/images/JCProfile.jpg";
 ---
 
 <div class="mt-10 md:mt-1">
   <div class="flex flex-col md:flex-row gap-5">
     <img
-      src={profilePic.src}
+      src={JCProfile.src}
       alt="Keith Esclavon"
-      class="w-[100px] md:w-auto md:h-[150px]"
+      class="w-[150px] md:w-auto md:h-[150px]"
     />
     <div class="flex flex-col">
       <h1 class="text-[40px] lg:text-[48px] font-semibold">Keith Esclavon</h1>
-      <div class="flex gap-3 text-2xl">
+      <div class="text-blue flex gap-3 text-2xl">
         <a href="" class="hover:text-[#899AB3]"><Icon name="github" /></a>
         <a href="" class="hover:text-[#899AB3]"><Icon name="linkedin" /></a>
         <a href="" class="hover:text-[#899AB3]"><Icon name="discord" /></a>
@@ -23,13 +23,14 @@ import profilePic from "../assets/images/profilePic.png";
       </div>
       <h2 class="text-lg mt-3">
         Programmer based in <span
-          class="hover:cursor-tennessee font-bold hover:text-transparent bg-clip-text hover:animate-gradient hover:bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400"
+          class="font-bold"
           >Tennessee</span
         >
       </h2>
     </div>
   </div>
-  <p class="mt-4
+  <p class="text-gray-500
+  mt-4
           text-lg
           text-[#899AB3]
           italic">
