@@ -1,27 +1,24 @@
 ---
-import CreationImg from "../assets/images/CreationImg.png";
 import { Icon } from "astro-icon/components";
 import JCProfile from "../assets/images/JCProfile.jpg";
 ---
 
-<div class="mt-10 md:mt-1">
-  <div class="flex flex-col md:flex-row gap-5">
+<div>
+  <div class="flex flex-col md:flex-row gap-2">
     <img
       src={JCProfile.src}
       alt="Keith Esclavon"
       class="w-[150px] md:w-auto md:h-[150px]"
     />
-    <div class="flex flex-col">
-      <h1 class="text-[40px] lg:text-[48px] font-semibold">Keith Esclavon</h1>
-      <div class="text-blue flex gap-3 text-2xl">
-        <a href="" class="hover:text-[#899AB3]"><Icon name="github" /></a>
-        <a href="" class="hover:text-[#899AB3]"><Icon name="linkedin" /></a>
-        <a href="" class="hover:text-[#899AB3]"><Icon name="discord" /></a>
-        <a href="" class="hover:text-[#899AB3]"><Icon name="x" /></a>
-        <a href="" class="hover:text-[#899AB3]"><Icon name="email" /></a>
-        <a href="" class="hover:text-[#899AB3]"><Icon name="resume" /></a>
+    <div class="flex flex-col gap-2">
+      <h1 class="text-3xl lg:text-3xl font-semibold">Keith Esclavon</h1>
+      <div class=" flex gap-2 text-xl text-red-700">
+        <a href="" class="hover:text-red-500"><Icon name="github" /></a>
+        <a href="" class="hover:text-red-500"><Icon name="linkedin" /></a>
+        <a href="" class="hover:text-red-500"><Icon name="discord" /></a>
+        <a href="" class="hover:text-red-500"><Icon name="email" /></a>
       </div>
-      <h2 class="text-lg mt-3">
+      <h2 class="text-lg">
         Programmer based in <span
           class="font-bold"
           >Tennessee</span
@@ -29,11 +26,12 @@ import JCProfile from "../assets/images/JCProfile.jpg";
       </h2>
     </div>
   </div>
-  <p class="text-gray-500
-  mt-4
-          text-lg
-          text-[#899AB3]
-          italic">
+  <p class="
+          text-base
+          mt-4
+          italic
+          text-gray-700
+          ">
     Currently helping small businesses solve their digital problems.
   </p>
 

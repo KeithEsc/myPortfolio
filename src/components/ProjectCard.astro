@@ -8,7 +8,7 @@ interface Props {
 const { image, title, body } = Astro.props;
 ---
 
-<div class="flex gap-4 flex-col md:flex-row  p-4">
+<div class="flex gap-4 flex-col md:flex-row">
   <img
     src={image}
     alt={title}
@@ -16,7 +16,7 @@ const { image, title, body } = Astro.props;
   />
   <div class="flex flex-col gap-2 order-1 md:order-2">
     <h2
-      class="text-lg font-bold text-blue hover:text-gray-50 group flex items-center"
+      class="text-lg font-semibold text-red-700 hover:text-red-500 group flex items-center"
     >
       {title}
       <span 
@@ -26,6 +26,6 @@ const { image, title, body } = Astro.props;
       &nearr;
     </span>
     </h2>
-    <p class="text-dark leading-6 text-base">{body}</p>
+    <p class="text-gray-700 leading-6 text-base">{body}</p>
   </div>
 </div>

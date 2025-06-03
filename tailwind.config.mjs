@@ -5,9 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        light: "#fff9f9",
-        dark: "#3c3a39",
-        blue: "#00a4f3",
+        green: "#273556",
+        blue: "#f3efef",
       },
       animation: {
         gradient: "gradient 1s linear infinite",

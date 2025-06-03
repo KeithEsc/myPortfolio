@@ -24,12 +24,12 @@ const posts = await getPosts();
               })}
             </p>
             <div
-              class="prose prose-sm mb-2 text-gray-300 text-base"
+              class="prose prose-sm mb-2 text-gray-700 text-base"
               set:html={truncateText(post.excerpt, 150)}
             />
             <a
               href={`/posts/${post.slug}`}
-              class="text-base inline-block text-blue-800 hover:text-blue-500 hover:underline "
+              class="text-base inline-block text-red-700 hover:text-red-500 hover:underline "
             >
               Read more
             </a>
