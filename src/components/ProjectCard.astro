@@ -12,20 +12,25 @@ const { image, title, body } = Astro.props;
   <img
     src={image}
     alt={title}
-    class="w-[200px] h-[120px] md:order-1"
+    class="w-[350px] h-[200px] md:order-1"
   />
   <div class="flex flex-col gap-2 order-1 md:order-2">
     <h2
-      class="text-lg font-semibold text-red-700 hover:text-red-500 group flex items-center"
+      class="text-lg font-semibold group flex items-center"
     >
       {title}
-      <span 
-      class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 color:red-500"
+
+    </h2>
+    <p class="text-gray-700 leading-6 text-base">{body}</p>
+
+    <div class="mt-auto text-base text-sky-700 group flex items-center flex-end">View Project
+            <span 
+      class="ml-1 text-xl font-semibold transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
       style="background: none !important;"
     >
       &nearr;
     </span>
-    </h2>
-    <p class="text-gray-700 leading-6 text-base">{body}</p>
+  </div>
+
   </div>
 </div>
